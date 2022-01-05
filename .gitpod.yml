@@ -1,0 +1,7 @@
+image:
+  file: .gitpod.dockerfile
+
+vscode:
+  extensions:
+    - ms-dotnettools.csharp
+    - editorconfig.editorconfig
