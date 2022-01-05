@@ -3,5 +3,5 @@ image:
 
 vscode:
   extensions:
-    - ms-dotnettools.csharp
+    - muhammad-sammy.csharp
     - editorconfig.editorconfig
