@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/vscode/devcontainers/universal:linux
+FROM mcr.microsoft.com/vscode/devcontainers/base:debian
 
 USER vscode
 

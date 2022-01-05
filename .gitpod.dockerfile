@@ -1,4 +1,4 @@
-FROM gitpod/workspace-full:latest
+FROM docker.io/gitpod/workspace-full:latest
 
 USER gitpod
 
