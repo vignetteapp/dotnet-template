@@ -22,21 +22,13 @@ jobs:
         with:
           dotnet-version: '5.0.x'
 
-      - name: Lint
-        uses: github/super-linter@v4
-        env:
-          SUPPRESS_POSSUM: true
-          VALIDATE_CSHARP: true
-          VALIDATE_EDITORCONFIG: true
-          VALIDATE_ALL_CODEBASE: false
-
       - name: Test
-        run: dotnet test ${{ inputs.name }}.slnf --logger "trx;LogFileName=${{ inputs.name }}.trx"
+        run: dotnet test ${{ inputs.path }} --logger "trx;LogFileName=TestResults-${{ inputs.name }}.trx"
 
       - name: Upload Results
         uses: actions/upload-artifact@v2
         if: ${{ always() }}
         with:
-          name: ${{ inputs.name }}
+          name: TestResults-${{ inputs.name }}
           path: ${{ github.workspace }}/${{ inputs.path }}/TestResults/TestResults-${{ inputs.name }}.trx
 
