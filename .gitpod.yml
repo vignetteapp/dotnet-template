@@ -5,3 +5,10 @@ vscode:
   extensions:
     - muhammad-sammy.csharp
     - editorconfig.editorconfig
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: true
