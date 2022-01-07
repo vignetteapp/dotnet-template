@@ -31,7 +31,7 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
 
       - name: Test
-        run: dotnet test sbtw-desktop.slnf --logger "trx;LogFileName=${{ inputs.name }}.trx"
+        run: dotnet test ${{ inputs.name }}.slnf --logger "trx;LogFileName=${{ inputs.name }}.trx"
 
       - name: Upload Results
         uses: actions/upload-artifact@v2
