@@ -9,6 +9,7 @@ insert_final_newline = true
 
 [*.{csproj,targets,props}]
 indent_size = 2
+file_header_template = Copyright (c) Vignette\nThis file is part of <PROJECT>.\n<PROJECT> is licensed under <LICENSE>. See LICENSE for details.
 
 [*.cs]
 indent_size = 4
