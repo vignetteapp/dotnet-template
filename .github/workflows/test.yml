@@ -30,10 +30,29 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Setup .NET 6
+      - name: Setup .NET 7
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '6.0.x'
+          dotnet-version: '7.0.x'
+
+      - name: Install Optional Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libgl1-mesa-dev \
+            libsdl2-dev \
+            llvm-dev \
+            xvfb \
+            xauth
+
+      - name: Setup Xvfb
+        run: |
+          mkdir .staging
+          wget -O Xvfb.service https://gist.githubusercontent.com/ypandit/f4fe751bcbf3ee6a32ca/raw/f2f3a955e430e1f574c985cec0947d55496066d3/Xvfb.service
+          sudo mv Xvfb.service /etc/systemd/system/Xvfb.service
+          sudo systemctl daemon-reload
+          sudo systemctl start Xvfb
+          sudo systemctl status Xvfb
 
       - name: Build <PROJECT>
         run: dotnet build ${{ env.PROJECT_NAME }} -r ${{ matrix.os.runtime }} --self-contained
