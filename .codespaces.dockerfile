@@ -8,7 +8,7 @@ RUN sudo apt-get update && export DEBIAN_FRONTEND=noninteractive \
         xvfb xauth \
     && sudo apt-get autoremove -y \
     && sudo apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && sudo rm -rf /var/lib/apt/lists/*
 
 # Install .NET SDK
 # Source: https://docs.microsoft.com/dotnet/core/install/linux-scripted-manual#scripted-install
