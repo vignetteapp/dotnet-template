@@ -11,7 +11,7 @@
         "additionalVersions": "lts"
       },
       // WASM support, most likely needed by Uno
-      "devwasm.azurecr.io/dev-wasm/dev-wasm-feature/wasmtime-wasi:0.0.4": {
+      "devwasm.azurecr.io/dev-wasm/dev-wasm-feature/wasmtime-wasi:0.0.15": {
         "version": "17"
       }
     },
@@ -21,4 +21,3 @@
       }
     }
   }
-  
