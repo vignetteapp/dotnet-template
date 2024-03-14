@@ -1,23 +1,19 @@
 {
-    // Develop and expect feature level to be the same as Steam Runtime 3.0 (Debian 11)
-    "image": "registry.gitlab.steamos.cloud/steamrt/sniper/sdk",
-    "features": {
-      "ghcr.io/codesandbox/devcontainer-features/codesandbox:latest": {},
-      "ghcr.io/devcontainers/features/common-utils:2": {
-        "upgradePackages": true
-      },
-      "ghcr.io/devcontainers/features/dotnet:2": {
-        "version": "latest",
-        "additionalVersions": "lts"
-      },
-      // WASM support, most likely needed by Uno
-      "devwasm.azurecr.io/dev-wasm/dev-wasm-feature/wasmtime-wasi:0.0.15": {
-        "version": "17"
-      }
+  // Develop and expect feature level to be the same as Steam Runtime 3.0 (Debian 11)
+  "image": "registry.gitlab.steamos.cloud/steamrt/sniper/sdk",
+  "features": {
+    "ghcr.io/codesandbox/devcontainer-features/codesandbox:latest": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "upgradePackages": true
     },
-    "customizations": {
-      "vscode": {
-        "extensions": ["ms-dotnettools.csharp", "editorconfig.editorconfig"]
-      }
+    "ghcr.io/devcontainers/features/dotnet:2": {
+      "version": "latest",
+      "additionalVersions": "lts"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-dotnettools.csharp", "editorconfig.editorconfig"]
     }
   }
+}
